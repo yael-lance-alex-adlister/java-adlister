@@ -131,12 +131,10 @@ public class MySQLAdsDao implements Ads {
     //finds adds by the id.
     @Override
     public List<Ad> getAdsByUserId(Long id) {
-        System.out.println("\"ran this method\" = " + "ran this method");
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM ads WHERE userId = ?");
             statement.setLong(1, id);
             ResultSet rs = statement.executeQuery();
-            rs.next();
             return createAdsFromResults(rs);
         } catch(SQLException e) {
             e.printStackTrace();
