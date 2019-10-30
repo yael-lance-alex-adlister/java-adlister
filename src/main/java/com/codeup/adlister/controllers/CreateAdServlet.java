@@ -19,19 +19,37 @@ public class CreateAdServlet extends HttpServlet {
             return;
         }
         request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
-            .forward(request, response);
+                .forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         Ad ad = new Ad(
-            user.getId(),
-            user.getId(),
-            request.getParameter("title"),
-            request.getParameter("description"),
-            request.getParameter("username")
+                user.getId(),
+                user.getId(),
+                request.getParameter("title"),
+                request.getParameter("description"),
+                request.getParameter("username")
         );
+
+        String title = "title";
+        if(title.trim().isEmpty()){
+            System.out.println("This field cannot be empty");
+        }else {
+            return;
+        }
+
+        String description = "description";
+        if(description.trim().isEmpty()){
+            System.out.println("This field cannot be empty");
+        }else {
+            return;
+        }
+
         DaoFactory.getAdsDao().insert(ad);
         response.sendRedirect("/ads");
+
     }
+
+
 }
