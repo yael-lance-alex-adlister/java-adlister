@@ -17,5 +17,11 @@ public interface Ads {
 
     void delete(long id);
 
+
+    Ad edit(long id);
+
+    void update(Ad ad);
+  
     List<Ad> getAdsByUserId(Long id);
+
 }

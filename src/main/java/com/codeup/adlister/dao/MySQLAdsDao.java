@@ -128,6 +128,35 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
+    public Ad edit(long id){
+        String editQuery = "SELECT * FROM ads WHERE id = ?";
+        try{
+            PreparedStatement editStmt = connection.prepareStatement(editQuery);
+            editStmt.setLong(1, id);
+            ResultSet resultSet = editStmt.executeQuery();
+            resultSet.next();
+            return extractAd(resultSet);
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public void update(Ad ad){
+        String updateSql = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
+        try {
+            PreparedStatement updateStmt = connection.prepareStatement(updateSql);
+            updateStmt.setString(1, ad.getTitle());
+            updateStmt.setString(2, ad.getDescription());
+            updateStmt.setLong(3, ad.getId());
+            updateStmt.executeUpdate();
+
+        }catch (SQLException e){
+            throw new RuntimeException("Error creating a new ad.", e);
+        }
+
     //finds adds by the id.
     @Override
     public List<Ad> getAdsByUserId(Long id) {
@@ -141,5 +170,6 @@ public class MySQLAdsDao implements Ads {
         }
 
         return null;
+
     }
 }
