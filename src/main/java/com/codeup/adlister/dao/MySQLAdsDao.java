@@ -1,15 +1,10 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
-import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 import com.codeup.adlister.util.Config;
 
 
-
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -144,7 +139,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public void update(Ad ad){
+    public void update(Ad ad) {
         String updateSql = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
         try {
             PreparedStatement updateStmt = connection.prepareStatement(updateSql);
@@ -152,13 +147,12 @@ public class MySQLAdsDao implements Ads {
             updateStmt.setString(2, ad.getDescription());
             updateStmt.setLong(3, ad.getId());
             updateStmt.executeUpdate();
-
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    };
 
     //finds adds by the id.
-    @Override
     public List<Ad> getAdsByUserId(Long id) {
         try {
             PreparedStatement statement = connection.prepareStatement("SELECT * FROM ads WHERE userId = ?");
@@ -168,8 +162,6 @@ public class MySQLAdsDao implements Ads {
         } catch(SQLException e) {
             e.printStackTrace();
         }
-
         return null;
-
     }
 }
