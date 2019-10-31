@@ -1,4 +1,9 @@
 body {
-    background-color: green;
+    background-image: url("../img/backgroundPattern.png");
+    background-repeat: repeat;
 }
 
+.index-header {
+    background-color: #fff;
+    border-radius: 15px;
+}
