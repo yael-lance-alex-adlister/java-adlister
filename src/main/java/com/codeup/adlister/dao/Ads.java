@@ -19,4 +19,7 @@ public interface Ads {
     Ad edit(long id);
 
     void update(Ad ad);
+  
+    List<Ad> getAdsByUserId(Long id);
+
 }

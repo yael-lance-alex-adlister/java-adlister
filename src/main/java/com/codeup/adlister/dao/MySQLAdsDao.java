@@ -3,12 +3,7 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import com.codeup.adlister.util.Config;
-import jdk.internal.util.xml.impl.Input;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.file.Files;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -127,6 +122,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
     public Ad edit(long id){
         String editQuery = "SELECT * FROM ads WHERE id = ?";
         try{
@@ -142,7 +138,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     @Override
-    public void update(Ad ad){
+    public void update(Ad ad) {
         String updateSql = "UPDATE ads SET title = ?, description = ? WHERE id = ?";
         try {
             PreparedStatement updateStmt = connection.prepareStatement(updateSql);
@@ -150,9 +146,21 @@ public class MySQLAdsDao implements Ads {
             updateStmt.setString(2, ad.getDescription());
             updateStmt.setLong(3, ad.getId());
             updateStmt.executeUpdate();
-
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
+    };
+
+    //finds adds by the id.
+    public List<Ad> getAdsByUserId(Long id) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM ads WHERE userId = ?");
+            statement.setLong(1, id);
+            ResultSet rs = statement.executeQuery();
+            return createAdsFromResults(rs);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
