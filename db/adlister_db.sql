@@ -20,7 +20,9 @@ CREATE TABLE ads(
     username varchar(255)
 );
 
+#  categories should be many to many
 CREATE TABLE categories(
     id int (20) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name varchar (255) NOT NULL
+
 )
