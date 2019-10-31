@@ -30,6 +30,7 @@
                 </form>
             </c:if>
 
+<%--            edit button added by kyndall--%>
             <a href="/ads/edit?id=${ad.id}" class="btn btn primary">
                 <input type="submit" class="btn btn primary" value="Edit Ad" onclick="return confirm('Would you like to edit this ad')">
             </a>
