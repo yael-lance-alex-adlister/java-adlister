@@ -37,7 +37,7 @@ body {
 
 /* Page Content */
 
-.index-header {
+.index-header, .login-wrapper, .register-wrapper {
     background-color: #fff;
     border-radius: 15px;
     display: flex;
@@ -105,4 +105,35 @@ nav {
 
 .nav-navlinks i {
     margin-top: 1em;
+}
+
+#nav-adlisterLogo{
+    position: relative;
+    left: 40px;
+}
+
+/*.login-wrapper {*/
+/*    background: #ffffff;*/
+/*    border-radius: 15px;*/
+/*}*/
+
+#username, #password, #submit {
+    width: 100%;
+}
+
+.login-wrapper, .register-wrapper {
+    padding-top: 3rem;
+}
+
+#login-form, #register-form {
+    margin: auto;
+    min-width: 50vw;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.login-nav {
+    padding-top: 1rem;
+    font-size: .7rem;
+    text-align: center;
 }

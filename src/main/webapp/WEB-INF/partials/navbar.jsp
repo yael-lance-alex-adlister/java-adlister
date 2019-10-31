@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="nav-wrapper">
             <h2></h2>
-            <a href="/index.jsp" class="text-center"><img src="../../img/adlisterLogo.png"></a>
+            <a href="/index.jsp" class="text-center"><img src="../../img/adlisterLogo.png" id="nav-adlisterLogo"></a>
 
             <ul class="nav-navlinks">
                 <c:if test = "${sessionScope.loggedInUserId == null}">
