@@ -18,5 +18,3 @@ CREATE TABLE ads(
     description varchar(255) NOT NULL,
     username varchar(255)
 );
-
-	

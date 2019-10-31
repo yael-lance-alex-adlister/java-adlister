@@ -3,12 +3,12 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import com.codeup.adlister.util.Config;
-
-
+import jdk.internal.util.xml.impl.Input;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Files;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -126,4 +126,5 @@ public class MySQLAdsDao implements Ads {
             e.printStackTrace();
         }
     }
+
 }

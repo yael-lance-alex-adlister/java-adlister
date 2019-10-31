@@ -1,21 +1,21 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<nav class="navbar navbar-default">
+<nav>
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Adlister</a>
+        <div class="nav-wrapper">
+            <h2></h2>
+            <a href="/index.jsp" class="text-center"><img src="../../img/adlisterLogo.png"></a>
+
+            <ul class="nav-navlinks">
+                <c:if test = "${sessionScope.loggedInUserId == null}">
+                    <li><p><a href="/login"><i class="fas fa-sign-in-alt"></i></a></p></li>
+                    <li><p><a href="/register"><i class="fas fa-user-plus"></i></a></p></li>
+                </c:if>
+                <c:if test = "${sessionScope.loggedInUserId != null}">
+                    <li><p><a href="/profile"><i class="fas fa-user"></i></a></p></li>
+                    <li><p><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></p></li>
+                </c:if>
+            </ul>
         </div>
-
-        <ul class="nav navbar-nav navbar-right">
-
-            <c:if test = "${sessionScope.loggedInUserId != null}">
-                <li><a href="/profile">Profile</a></li>
-            </c:if>
-
-            <li><a href="/login">Login</a></li>
-            <li><a href="/logout">Logout</a></li>
-        </ul>
-    </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+    </div>
 </nav>
