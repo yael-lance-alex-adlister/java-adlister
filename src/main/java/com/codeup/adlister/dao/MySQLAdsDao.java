@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 import com.codeup.adlister.util.Config;
 
@@ -127,6 +128,7 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+
     public Ad edit(long id){
         String editQuery = "SELECT * FROM ads WHERE id = ?";
         try{
@@ -154,5 +156,20 @@ public class MySQLAdsDao implements Ads {
         }catch (SQLException e){
             throw new RuntimeException("Error creating a new ad.", e);
         }
+
+    //finds adds by the id.
+    @Override
+    public List<Ad> getAdsByUserId(Long id) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM ads WHERE userId = ?");
+            statement.setLong(1, id);
+            ResultSet rs = statement.executeQuery();
+            return createAdsFromResults(rs);
+        } catch(SQLException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+
     }
 }
