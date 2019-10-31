@@ -4,7 +4,7 @@
 <head>
     <head>
         <jsp:include page="/WEB-INF/partials/head.jsp">
-            <jsp:param name="title" value="AdLister - Register" />
+            <jsp:param name="title" value="AdLister - Profile" />
         </jsp:include>
         <link href="<c:url value='/css/style.css' />" rel="stylesheet"/>
     </head>
@@ -16,7 +16,7 @@
                 <h1><em>Welcome, ${sessionScope.user.username}!</em></h1>
                 <p><a href="/ads">View Ads</a> | <a href="/ads/create"><i class="far fa-plus-square"></i></a></p>
 
-                <table class="table table-striped ads-table">
+                <table class="table table-hover table-striped ads-table">
                     <thead>
                         <tr>
                             <th scope="col">id #</th>

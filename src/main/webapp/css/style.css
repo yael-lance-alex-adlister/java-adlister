@@ -36,7 +36,7 @@ body {
 }
 
 a:link {
-    text-decoration: none;
+    text-decoration: underline;
     color: #000;
     transition: color .2s;
 }
@@ -62,7 +62,9 @@ a:active {
 .index-header,
 .login-wrapper,
 .register-wrapper,
-.profile-wrapper {
+.profile-wrapper,
+.adsIdx-wrapper,
+.results-wrapper {
     background-color: #fff;
     border-radius: 15px;
     display: flex;
@@ -123,7 +125,7 @@ nav {
     transition: color .8s;
 }
 
-.nav-navlinks li a::hover {
+.nav-navlinks li a:hover {
     color: darkgrey;
     transition: color .8s;
 }
@@ -150,7 +152,8 @@ nav {
 
 .login-wrapper,
 .register-wrapper,
-.profile-wrapper {
+.profile-wrapper,
+.results-wrapper {
     padding-top: 3rem;
 }
 
@@ -176,10 +179,38 @@ nav {
     margin: auto;
 }
 
-.ads-table td {
-    padding: .2rem;
+.adsIdx-tableHead,
+results-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.adsIdx-tableHead-left {
+    width: 50%;
+    display: inline-block;
+}
+
+.adsIdx-tableHead-right {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: auto;
+    text-align: right;
+}
+
+#search {
+    width: 50%;
 }
 
 td > p {
     margin-bottom: 0rem !important;
+}
+
+td p.description {
+    color: #777777;
+}
+
+table {
+    cursor: pointer;
 }

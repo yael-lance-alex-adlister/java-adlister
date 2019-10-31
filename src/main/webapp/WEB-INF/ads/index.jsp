@@ -3,38 +3,53 @@
 <html>
     <head>
         <jsp:include page="/WEB-INF/partials/head.jsp">
-            <jsp:param name="title" value="Viewing All The Ads" />
+            <jsp:param name="title" value="AdLister - Register" />
         </jsp:include>
+        <link href="<c:url value='/css/style.css' />" rel="stylesheet"/>
     </head>
     <body>
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
         <div class="container">
-            <div class="header" style="height: 150px;width: 100%;">
-                <div class="col-md-6">
-                    <h1>Here Are all the ads!</h1>
-                    <h3><a href="/ads/create">Create an ad</a></h3>
-                </div>
-                <div class="col-md-6">
-                    <form method="POST" action="/search">
-                        <label for="search">Search for ads</label>
-                        <input type="text" id="search" name="search" placeholder="search for ads" style="display: inline-block; width: 85%;">
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
-            </div>
 
-            <div class="row">
-                <c:forEach var="ad" items="${ads}">
-                    <div class="col-md-6">
-                        <h2><a href="/ads/?ad_id=${ad.id}">${ad.title}</a></h2>
-                        <h2><em>${ad.username}</em></h2>
-                        <p>${ad.description}</p>
+            <div class="adsIdx-wrapper">
+
+                <h3>Here Are all the ads!</h3>
+                <div class="adsIdx-tableHead">
+                    <div class="adsIdx-tableHead-left">
+                        <p><a href="/profile">View Your Ads</a> | <a href="/ads/create"><i class="far fa-plus-square"></i></a></p>
                     </div>
-                </c:forEach>
+                    <div class="adsIdx-tableHead-right">
+                        <form method="POST" action="/search">
+                            <input type="text" id="search" name="search" size=40 placeholder="search for ads">
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
+
+
+                <table class="table table-hover table-striped ads-table">
+                    <thead>
+                    <tr>
+                        <th scope="col">id #</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="ad" items="${ads}">
+                        <tr>
+                            <th scope="row">${ad.id}</th>
+                            <td><p>${ad.username}</p></td>
+                            <td><p><a href="/ads/?ad_id=${ad.id}">${ad.title}</a></p></td>
+                            <td><p class="description"><em>${ad.description}</em></p></td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
+
             </div>
         </div>
-
 
     </body>
 </html>
