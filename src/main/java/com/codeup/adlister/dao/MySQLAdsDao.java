@@ -4,7 +4,6 @@ import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
 import com.codeup.adlister.util.Config;
 
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

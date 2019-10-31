@@ -54,7 +54,7 @@ public class MySQLUsersDao implements Users {
         }
     }
 
-    // Find user by user id and return string of their name
+    // Find user by user id and return
     @Override
     public User findById(Long id) {
         String query = "SELECT * FROM users WHERE id = ? LIMIT 1";
@@ -77,6 +77,31 @@ public class MySQLUsersDao implements Users {
             rs.getString("email"),
             rs.getString("password")
         );
+    }
+
+    // Deletes user from users table. (overloaded method)
+    // Written for UsersDaoTest.
+    public void deleteUser(Long id) {
+        String query = "DELETE FROM users WHERE id = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, String.valueOf(id));
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Unable to delete user with ID of " + id);
+        }
+    }
+
+    // Finds user by username then deletes them
+    public void deleteUser(String u) {
+        String query = "DELETE FROM users WHERE username = ?";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, "'" + u + "'");
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Unable to delete user with username of " + u);
+        }
     }
 
 }

@@ -1,0 +1,108 @@
+/* Variables */
+
+:root {
+    --null: "";
+}
+
+/* Borders (for troubleshooting) */
+
+.wborder {
+    border: 1px solid #fff;
+    z-index: 999;
+}
+
+.bborder {
+    border: 1px solid #000;
+    z-index: 999;
+}
+
+/* Basic Page Elements */
+
+* {
+    box-sizing: border-box;
+}
+
+main, html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-image: url("../img/backgroundPattern.png");
+    background-repeat: repeat;
+    padding-top: 70px;
+}
+
+/* Page Content */
+
+.index-header {
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    padding: 1em;
+}
+
+.index-loginRegister {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem;
+    width: 100%;
+}
+
+.index-loginRegister button {
+    margin-right: 1em;
+}
+
+nav {
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    max-height: 100px;
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px -3px 30px 0px rgba(0,0,0,0.75);
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-wrapper img {
+    width: 31%;
+}
+
+.nav-navlinks {
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.nav-navlinks li {
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.nav-navlinks li a {
+    color: black;
+    transition: color .8s;
+}
+
+.nav-navlinks li a::hover {
+    color: darkgrey;
+    transition: color .8s;
+}
+
+.nav-navlinks i {
+    margin-top: 1em;
+}
