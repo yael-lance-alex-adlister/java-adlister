@@ -15,4 +15,8 @@ public interface Ads {
     List<Ad> adsTitleQuery(String q);
 
     void delete(long id);
+
+    Ad edit(long id);
+
+    void update(Ad ad);
 }
