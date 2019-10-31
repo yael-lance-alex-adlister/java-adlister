@@ -35,9 +35,34 @@ body {
     padding-top: 70px;
 }
 
+a:link {
+    text-decoration: none;
+    color: #000;
+    transition: color .2s;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: grey;
+    transition: color, text-decoration .2s;
+}
+
+a:active {
+    text-decoration: underline;
+    color: grey;
+}
+
 /* Page Content */
 
-.index-header, .login-wrapper, .register-wrapper {
+.index-header,
+.login-wrapper,
+.register-wrapper,
+.profile-wrapper {
     background-color: #fff;
     border-radius: 15px;
     display: flex;
@@ -117,11 +142,15 @@ nav {
 /*    border-radius: 15px;*/
 /*}*/
 
-#username, #password, #submit {
+#username,
+#password,
+#submit {
     width: 100%;
 }
 
-.login-wrapper, .register-wrapper {
+.login-wrapper,
+.register-wrapper,
+.profile-wrapper {
     padding-top: 3rem;
 }
 
@@ -136,4 +165,21 @@ nav {
     padding-top: 1rem;
     font-size: .7rem;
     text-align: center;
+}
+
+.profile-wrapper {
+    padding-bottom: 4rem;
+}
+
+.ads-table {
+    width: 95%;
+    margin: auto;
+}
+
+.ads-table td {
+    padding: .2rem;
+}
+
+td > p {
+    margin-bottom: 0rem !important;
 }

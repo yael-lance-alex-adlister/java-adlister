@@ -1,25 +1,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
-<div class="container">
-    <h1>Welcome, ${sessionScope.user.username}!</h1>
-    <h3><a href="/ads">View Ads</a></h3>
-
-    <c:forEach var="ad" items="${ads}">
-        <div>
-            <p><strong>Title</strong>: ${ad.title}</p>
-            <p><strong>Description</strong>: ${ad.description}</p>
-        </div>
-    </c:forEach>
-</div>
-
-</body>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Your Profile" />
-    </jsp:include>
-</head>
+    <head>
+        <jsp:include page="/WEB-INF/partials/head.jsp">
+            <jsp:param name="title" value="AdLister - Register" />
+        </jsp:include>
+        <link href="<c:url value='/css/style.css' />" rel="stylesheet"/>
+    </head>
+    <body>
+        <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+        <div class="container">
+            <div class="profile-wrapper">
+
+                <h1><em>Welcome, ${sessionScope.user.username}!</em></h1>
+                <p><a href="/ads">View Ads</a> | <a href="/ads/create"><i class="far fa-plus-square"></i></a></p>
+
+                <table class="table table-striped ads-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id #</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach var="ad" items="${ads}">
+                            <tr>
+                                <th scope="row">${ad.id}</th>
+                                <td><p>${ad.title}</p></td>
+                                <td><p>${ad.description}</p></td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </body>
 </html>

@@ -16,7 +16,6 @@
                 <div class="index-loginRegister">
                     <a href="/login"><button type="button" class="btn btn-outline-primary">Login</button></a>
                     <a href="/register"><button type="button" class="btn btn-outline-success">Register</button></a>
-                    <br>
                     <a href="/ads"><button type="button" class="btn btn-outline-info">View Ads</button></a>
                 </div>
             </div>
