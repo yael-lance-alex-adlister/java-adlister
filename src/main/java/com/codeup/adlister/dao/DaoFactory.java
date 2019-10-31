@@ -20,4 +20,10 @@ public class DaoFactory {
         }
         return usersDao;
     }
+
+//    public static Categories getCategoriesDao() {
+//        if () {
+//
+//        }
+    }
 }
