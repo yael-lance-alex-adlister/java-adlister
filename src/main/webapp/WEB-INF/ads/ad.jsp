@@ -30,6 +30,10 @@
                 </form>
             </c:if>
 
+            <a href="/ads/edit?id=${ad.id}" class="btn btn primary">
+                <input type="submit" class="btn btn primary" value="Edit Ad" onclick="return confirm('Would you like to edit this ad')">
+            </a>
+
             <p><a href="/ads">Go back and view all ads</a></p>
             <p><a href="/ads/create">Create an ad</a></p>
         </div>
