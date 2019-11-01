@@ -12,7 +12,7 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="AdLister - Register" />
+        <jsp:param name="title" value="AdLister - View Search Results" />
     </jsp:include>
     <link href="<c:url value='/css/style.css' />" rel="stylesheet"/>
 </head>

@@ -18,20 +18,20 @@
 
                 <table class="table table-hover table-striped ads-table">
                     <thead>
-                        <tr>
-                            <th scope="col">id #</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                        </tr>
+                    <tr>
+                        <th scope="col">id #</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        <c:forEach var="ad" items="${ads}">
-                            <tr>
-                                <th scope="row">${ad.id}</th>
-                                <td><p>${ad.title}</p></td>
-                                <td><p>${ad.description}</p></td>
-                            </tr>
-                        </c:forEach>
+                    <c:forEach var="ad" items="${ads}">
+                        <tr>
+                            <th scope="row">${ad.id}</th>
+                            <td><p><a href="/ads/?ad_id=${ad.id}">${ad.title}</a></p></td>
+                            <td><p class="description"><em>${ad.description}</em></p></td>
+                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
 

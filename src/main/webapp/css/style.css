@@ -66,7 +66,8 @@ a:active {
 .adsIdx-wrapper,
 .results-wrapper,
 .ad-wrappper,
-.create-wrapper {
+.create-wrapper,
+.edit-wrapper {
     background-color: #fff;
     border-radius: 15px;
     display: flex;
@@ -152,7 +153,8 @@ nav {
 .profile-wrapper,
 .results-wrapper,
 .ad-wrappper,
-.create-wrapper {
+.create-wrapper,
+.edit-wrapper {
     padding-top: 3rem;
 }
 
@@ -165,7 +167,8 @@ nav {
 
 .login-nav,
 .ad-nav,
-.create-nav {
+.create-nav,
+.edit-nav {
     padding-top: 1rem;
     font-size: .7rem;
     text-align: center;
@@ -238,11 +241,16 @@ table {
     padding-bottom: 3em;
 }
 
-.create-nav {
+.create-nav,
+.edit-nav {
     margin: 5em 0 0 0;
 }
 
 #createForm {
     width: 70%;
     margin: auto;
+}
+
+.edit-wrapper {
+    padding-bottom: 5rem;
 }
