@@ -35,9 +35,39 @@ body {
     padding-top: 70px;
 }
 
+a:link {
+    text-decoration: underline;
+    color: #000;
+    transition: color .2s;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: grey;
+    transition: color, text-decoration .2s;
+}
+
+a:active {
+    text-decoration: underline;
+    color: grey;
+}
+
 /* Page Content */
 
-.index-header {
+.index-header,
+.login-wrapper,
+.register-wrapper,
+.profile-wrapper,
+.adsIdx-wrapper,
+.results-wrapper,
+.ad-wrappper,
+.create-wrapper,
+.edit-wrapper {
     background-color: #fff;
     border-radius: 15px;
     display: flex;
@@ -98,11 +128,129 @@ nav {
     transition: color .8s;
 }
 
-.nav-navlinks li a::hover {
+.nav-navlinks li a:hover {
     color: darkgrey;
     transition: color .8s;
 }
 
 .nav-navlinks i {
     margin-top: 1em;
+}
+
+#nav-adlisterLogo{
+    position: relative;
+    left: 40px;
+}
+
+#username,
+#password,
+#submit {
+    width: 100%;
+}
+
+.login-wrapper,
+.register-wrapper,
+.profile-wrapper,
+.results-wrapper,
+.ad-wrappper,
+.create-wrapper,
+.edit-wrapper {
+    padding-top: 3rem;
+}
+
+#login-form, #register-form {
+    margin: auto;
+    min-width: 50vw;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.login-nav,
+.ad-nav,
+.create-nav,
+.edit-nav {
+    padding-top: 1rem;
+    font-size: .7rem;
+    text-align: center;
+}
+
+.profile-wrapper {
+    padding-bottom: 4rem;
+}
+
+.ads-table {
+    width: 95%;
+    margin: auto;
+}
+
+.adsIdx-tableHead,
+.results-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.adsIdx-tableHead-left {
+    width: 50%;
+    display: inline-block;
+}
+
+.adsIdx-tableHead-right {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: auto;
+    text-align: right;
+}
+
+#search {
+    width: 50%;
+}
+
+td > p {
+    margin-bottom: 0rem !important;
+}
+
+td p.description {
+    color: #777777;
+}
+
+table {
+    cursor: pointer;
+}
+
+.ad-wrappper {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.ad-wrapper-titleLeft {
+    min-width: 10rem;
+}
+
+#deleteForm {
+    padding: 0;
+}
+
+#viewAdHeader {
+    padding-bottom: 1em;
+}
+
+.create-wrapper {
+    padding-bottom: 3em;
+}
+
+.create-nav,
+.edit-nav {
+    margin: 5em 0 0 0;
+}
+
+#createForm {
+    width: 70%;
+    margin: auto;
+}
+
+.edit-wrapper {
+    padding-bottom: 5rem;
 }

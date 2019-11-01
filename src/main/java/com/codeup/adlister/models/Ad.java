@@ -4,31 +4,34 @@ public class Ad {
     private long id;
     private long userId;
     private String title;
-    private String category;
     private String description;
     private String username;
 
-    public Ad(long id, long userId, String title, String category, String description, String username) {
-        this.id = id;
+    public Ad(long userId, String title, String description, String username) {
         this.userId = userId;
         this.title = title;
-        this.category = category;
         this.description = description;
         this.username = username;
     }
 
-    public Ad(long id, long userId, String title, String category, String description) {
+    public Ad(long id, long userId, String title, String description, String username) {
         this.id = id;
         this.userId = userId;
         this.title = title;
-        this.category = category;
+        this.description = description;
+        this.username = username;
+    }
+
+    public Ad(long id, long userId, String title, String description) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
         this.description = description;
     }
 
-    public Ad(long userId, String title, String category, String description) {
+    public Ad(long userId, String title, String description) {
         this.userId = userId;
         this.title = title;
-        this.category = category;
         this.description = description;
     }
 
@@ -72,11 +75,4 @@ public class Ad {
         this.username = username;
     }
 
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
 }
