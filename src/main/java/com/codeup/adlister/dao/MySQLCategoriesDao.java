@@ -23,18 +23,13 @@ public class MySQLCategoriesDao implements Categories{
         }
     }
 
-    @Override
-    public Locale.Category getCategoriesByName(String name) {
-        String query = "SELECT * FROM categories WHERE category = ? LIMIT 1";
-        try {
-            PreparedStatement statement = connection.prepareStatement("");
-            statement.setLong(1, Long.parseLong(name));
-//            return extract
-
-        } catch (SQLException e) {
-            throw new RuntimeException("Error", e);
-        }
-    }
+//    @Override
+//    public Locale.Category getCategoriesByName(String name) {
+//        String query = "SELECT * FROM categories WHERE category = ? LIMIT 1";
+//        try {
+//            PreparedStatement statement = connection.prepareStatement("");
+//            statement.setLong(1, Long.parseLong(name));
+////            return extract
 
     @Override
     public List<String> getCategoriesById(long id) {
