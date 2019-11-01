@@ -22,6 +22,17 @@ public class MySQLCategoriesDao implements Categories{
             throw new RuntimeException("Error connecting to the database!", e);
         }
     }
+    private Categories extractUser(ResultSet rs) throws SQLException {
+        if (! rs.next()) {
+            return null;
+        }
+//        return new Categories(
+//                rs.getLong("id"),
+//                rs.getString("username")
+//        );
+    }
+
+
 
 //    @Override
 //    public Locale.Category getCategoriesByName(String name) {
@@ -30,6 +41,8 @@ public class MySQLCategoriesDao implements Categories{
 //            PreparedStatement statement = connection.prepareStatement("");
 //            statement.setLong(1, Long.parseLong(name));
 ////            return extract
+
+
 
     @Override
     public List<String> getCategoriesById(long id) {
