@@ -64,7 +64,8 @@ a:active {
 .register-wrapper,
 .profile-wrapper,
 .adsIdx-wrapper,
-.results-wrapper {
+.results-wrapper,
+.ad-wrappper {
     background-color: #fff;
     border-radius: 15px;
     display: flex;
@@ -139,11 +140,6 @@ nav {
     left: 40px;
 }
 
-/*.login-wrapper {*/
-/*    background: #ffffff;*/
-/*    border-radius: 15px;*/
-/*}*/
-
 #username,
 #password,
 #submit {
@@ -153,7 +149,8 @@ nav {
 .login-wrapper,
 .register-wrapper,
 .profile-wrapper,
-.results-wrapper {
+.results-wrapper,
+.ad-wrappper {
     padding-top: 3rem;
 }
 
@@ -164,7 +161,8 @@ nav {
     padding-bottom: 4rem;
 }
 
-.login-nav {
+.login-nav,
+.ad-nav {
     padding-top: 1rem;
     font-size: .7rem;
     text-align: center;
@@ -180,7 +178,7 @@ nav {
 }
 
 .adsIdx-tableHead,
-results-header {
+.results-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -213,4 +211,22 @@ td p.description {
 
 table {
     cursor: pointer;
+}
+
+.ad-wrappper {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.ad-wrapper-titleLeft {
+    min-width: 10rem;
+}
+
+#deleteForm {
+    padding: 0;
+}
+
+#viewAdHeader {
+    padding-bottom: 1em;
 }
