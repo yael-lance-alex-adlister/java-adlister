@@ -30,15 +30,13 @@ public class EditAdServlet extends HttpServlet {
         //create an ad object with those values
         Ad ad = new Ad (
                 id,
-                user.getId(),
+                id,
                 title,
-                description
+                description,
+                user.getUsername()
         );
 
-        // use the dao factory to get ads dao
-        DaoFactory.getAdsDao();
-
-        // Add an update(ad) method to your dao (UPDATE SET)
+        // Add an update(ad) method to your (UPDATE SET)
         DaoFactory.getAdsDao().update(ad);
         response.sendRedirect("/profile");
     }

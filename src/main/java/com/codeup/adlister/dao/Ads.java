@@ -22,5 +22,4 @@ public interface Ads {
   
     List<Ad> getAdsByUserId(Long id);
 
-    List<Ad> getAdsByCategory(Long id);
 }
