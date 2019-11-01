@@ -19,8 +19,3 @@ CREATE TABLE ads(
     description varchar(255) NOT NULL,
     username varchar(255)
 );
-
-CREATE TABLE categories(
-    id int (20) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    name varchar (255) NOT NULL
-)

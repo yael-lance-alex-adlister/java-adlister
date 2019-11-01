@@ -18,6 +18,7 @@
                     <a href="/register"><button type="button" class="btn btn-outline-success">Register</button></a>
                     <a href="/ads"><button type="button" class="btn btn-outline-info">View Ads</button></a>
                 </div>
+                <img src="/img/adlistersPoster.png" style="margin: auto;width: 60%;">
             </div>
         </div>
     </body>
